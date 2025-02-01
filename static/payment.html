@@ -222,7 +222,7 @@
                   <p class="text-center">Vous pouvez maintenant fermer cette page.</p>
                 </div>`;
                         setTimeout(() => {
-                            window.location.href = "/payment"
+                            window.location.href = callbackUrl ?? "/payment"
                         }, 20000);
 
                     }
@@ -233,7 +233,7 @@
                          <p class="text-center">${error?.message ?? "Une erreur est survenue lors du traitement de votre demande. Veuillez réessayer ultérieurement."}</p>
                        </div>`;
                     setTimeout(() => {
-                        window.location.href = "/"
+                        window.location.href = callbackUrl ?? "/"
                     }, 20000);
                 }
                 );
