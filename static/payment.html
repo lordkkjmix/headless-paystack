@@ -60,7 +60,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const paymentLink = urlParams.get('paymentLink');
         const phoneNumber = urlParams.get('phoneNumber');
-        const callbackUrl = urlParams.get('callback');
+        const callbackUrl = "{{callbackUrl}}";
         const getPaymentProviders = async () => {
             const providers = await fetch('/api/v1/payment-providers').then(response => response.json());
             providersLoaded = providers;

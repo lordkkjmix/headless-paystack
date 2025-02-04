@@ -166,7 +166,7 @@ stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="r
             <p class="text-center">Vous pouvez maintenant fermer cette page.</p>
         </div>`;
                 setTimeout(() => {
-                    window.location.href = "/payment"
+                    window.location.href = redirectionUrl??"/payment";
                 }, 20000);
 
             }
@@ -177,7 +177,7 @@ stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="r
                     <p class="text-center">${error?.message ?? "Une erreur est survenue lors du traitement de votre demande. Veuillez réessayer ultérieurement."}</p>
                 </div>`;
             setTimeout(() => {
-                window.location.href = "/"
+                window.location.href = redirectionUrl ?? "/"
             }, 20000);
         }
         );

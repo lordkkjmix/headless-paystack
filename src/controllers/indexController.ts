@@ -34,9 +34,15 @@ export default async function indexController(fastify: FastifyInstance) {
     ) => {
         const indexHtmlPath = resolve(__dirname, "../../static/payment.html");
         const indexHtmlContent = await readFile(indexHtmlPath);
+        const defaultCallbackUrl = process.env.CALLBACK_URL ?? "/";
+        const updatedHtmlContent = indexHtmlContent.toString().replace(
+            '{{callbackUrl}}',
+            defaultCallbackUrl
+        );
+        console.log(updatedHtmlContent);
         reply
             .header("Content-Type", "text/html; charset=utf-8")
-            .send(indexHtmlContent);
+            .send(updatedHtmlContent);
     });
     fastify.get("/", {
     }, async (

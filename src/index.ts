@@ -1,9 +1,9 @@
 import app from "./app";
 
-const FASTIFY_PORT = Number(process.env.FASTIFY_PORT) || 3006;
+const PORT = Number(process.env.PORT) || 3006;
 const HOST = process.env.HOST || "0.0.0.0";
 
-app.listen({ port: FASTIFY_PORT, host: HOST }, (err: Error | null, address:
+app.listen({ port: PORT, host: HOST }, (err: Error | null, address:
     string) => {
     if (err) {
         console.error(err)
