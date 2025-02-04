@@ -171,7 +171,6 @@ stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="r
 
             }
         }).catch(error => {
-            console.log(error);
             document.getElementsByClassName('container')[0].innerHTML = `<div class="container mx-auto p-4 text-center">
                     <h1 class="text-3xl font-bold text-center mb-8">Echec de paiement ❌</h1>
                     <p class="text-center">${error?.message ?? "Une erreur est survenue lors du traitement de votre demande. Veuillez réessayer ultérieurement."}</p>

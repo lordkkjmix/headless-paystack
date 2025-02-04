@@ -39,7 +39,6 @@ export default async function indexController(fastify: FastifyInstance) {
             '{{callbackUrl}}',
             defaultCallbackUrl
         );
-        console.log(updatedHtmlContent);
         reply
             .header("Content-Type", "text/html; charset=utf-8")
             .send(updatedHtmlContent);
